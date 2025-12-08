@@ -40,20 +40,18 @@ class LLMService:
                 ]
             )
 
-            result: AiMessage = await self.llm_service.run(dialog)
+            result: str = await self.llm_service.run(dialog)
 
             result = result.removeprefix("```")
             result = result.removeprefix("markdown")
             result = result.removesuffix("```")
 
-            if result is None:
-                raise LLMProcessingError("LLM service returned None result")
-
         except AppBaseException as e:
             raise LLMProcessingError(e.message)
 
+        completion_id = f"chatcmpl-{uuid.uuid4().hex}"
         chat_result = ChatCompletionResponse(
-            id=str(uuid.uuid4()),
+            id=completion_id,
             choices=[
                 Choice(
                     index=0,
@@ -61,7 +59,7 @@ class LLMService:
                     finish_reason="stop",
                 )
             ],
-            model=req.model,
+            model=req.model.MODEL_NAME,
         )
 
         return chat_result

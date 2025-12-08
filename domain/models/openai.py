@@ -25,11 +25,20 @@ class Choice(BaseModel):
     finish_reason: Literal["stop", "length"]
 
 
+class Usage(BaseModel):
+    prompt_tokens: int
+    completion_tokens: int
+    total_tokens: int
+
+
 class ChatCompletionResponse(BaseModel):
     id: str
+    created: int = Field(default_factory=lambda: int(datetime.now().timestamp()))
     object: Literal["chat.completion"] = "chat.completion"
+
     model: str
     choices: List[Choice]
+    usage: Optional[Usage] = None
 
 
 class ModelInfo(BaseModel):
