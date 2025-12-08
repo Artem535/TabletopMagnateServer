@@ -40,7 +40,15 @@ class LLMService:
                 ]
             )
 
-            result = await self.llm_service.run(dialog)
+            result: AiMessage = await self.llm_service.run(dialog)
+
+            result = result.removeprefix("```")
+            result = result.removeprefix("markdown")
+            result = result.removesuffix("```")
+
+            if result is None:
+                raise LLMProcessingError("LLM service returned None result")
+
         except AppBaseException as e:
             raise LLMProcessingError(e.message)
 
