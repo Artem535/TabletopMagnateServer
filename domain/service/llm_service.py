@@ -42,7 +42,7 @@ class LLMService:
 
             result = await self.llm_service.run(dialog)
         except AppBaseException as e:
-            raise LLMProcessingError(str(e))
+            raise LLMProcessingError(e.message)
 
         chat_result = ChatCompletionResponse(
             id=str(uuid.uuid4()),
