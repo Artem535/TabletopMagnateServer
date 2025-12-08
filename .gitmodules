@@ -1,0 +1,3 @@
+[submodule "third_party/tabletopmagnat"]
+	path = third_party/tabletopmagnat
+	url = git@gitlab.raftds.com:rnd/research/pocketflow/tabletopmagnat.git

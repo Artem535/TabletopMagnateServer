@@ -1,0 +1,44 @@
+= Настольный Магнат
+
+== Зависимости
+
+* PocketFlow
+* Objectbox
+
+[,mermaid]
+----
+graph TD
+%%    Nodes
+    start_(Start)
+    end_(End)
+    task_classifier(Decide flow)
+    action_ur_start
+%% Graph
+    start_ --> task_classifier
+    task_classifier -- url --> action_ur_start
+    task_classifier -- user query --> llm
+    llm -. search query .-> action_gr_start
+
+    subgraph update_rag_tool
+        action_ur_start -- url --> docling_converting_pipe
+        docling_converting_pipe -- md --> action_chunk_extraction
+        subgraph chunk_extraction_sg
+            action_chunk_extraction --> chonkie
+            chonkie --> add_tags
+            add_tags -- chunks --> embed
+            embed -- vectors --> qdrant
+        end
+    end
+
+    subgraph get_from_rag_tool
+        action_gr_start -- search query --> embed2
+        embed2 -- vector --> qdrant2
+        qdrant2 -- string --> content
+    end
+
+    qdrant -- Message--> user
+
+    content --> llm
+    llm --> user
+    user --> end_
+----

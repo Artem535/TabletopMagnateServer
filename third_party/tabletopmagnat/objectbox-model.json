@@ -1,0 +1,135 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "modelVersionParserMinimum": 5,
+  "entities": [
+    {
+      "id": "1:6884523727941416605",
+      "name": "Rule",
+      "lastPropertyId": "10:7856808865417897044",
+      "properties": [
+        {
+          "id": "1:2723430713885517988",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8984327875398133155",
+          "name": "internal_id",
+          "type": 9
+        },
+        {
+          "id": "3:2183089817123819384",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "4:1648407806774743397",
+          "name": "section",
+          "type": 9
+        },
+        {
+          "id": "5:6476730682680437879",
+          "name": "game",
+          "type": 9
+        },
+        {
+          "id": "6:2738528006653828900",
+          "name": "req_term",
+          "type": 9
+        },
+        {
+          "id": "7:5476506233351702938",
+          "name": "scenario",
+          "type": 9
+        },
+        {
+          "id": "8:8951223048166437427",
+          "name": "priority",
+          "type": 3
+        },
+        {
+          "id": "9:697457209068954940",
+          "name": "zone",
+          "type": 9
+        },
+        {
+          "id": "10:7856808865417897044",
+          "name": "vector",
+          "type": 28,
+          "flags": 8,
+          "indexId": "1:496374875586104789"
+        }
+      ]
+    },
+    {
+      "id": "2:2145926118920446206",
+      "name": "Terminology",
+      "lastPropertyId": "11:2741671067477261843",
+      "properties": [
+        {
+          "id": "1:68286114216709594",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5619751478639341782",
+          "name": "internal_id",
+          "type": 9
+        },
+        {
+          "id": "3:6686604746964743101",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "4:4942611047227762891",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "5:7988640318820702708",
+          "name": "slug",
+          "type": 9
+        },
+        {
+          "id": "6:2213889027623407683",
+          "name": "kind",
+          "type": 9
+        },
+        {
+          "id": "7:7641852884086220886",
+          "name": "path",
+          "type": 9
+        },
+        {
+          "id": "8:8598496622242344523",
+          "name": "group",
+          "type": 9
+        },
+        {
+          "id": "9:7123915578346210932",
+          "name": "definition",
+          "type": 9
+        },
+        {
+          "id": "10:1673367956881261929",
+          "name": "extra",
+          "type": 9
+        },
+        {
+          "id": "11:2741671067477261843",
+          "name": "vector",
+          "type": 28,
+          "flags": 8,
+          "indexId": "2:3937888470689853115"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "2:2145926118920446206",
+  "lastIndexId": "2:3937888470689853115"
+}

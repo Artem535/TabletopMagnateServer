@@ -8,7 +8,10 @@ https://docs.pydantic.dev/latest/usage/settings/
 """
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
+from tabletopmagnat.config.config import Config
+from tabletopmagnat.config.langfuse import LangfuseSettings
+from tabletopmagnat.config.models import Models
+from tabletopmagnat.config.openai_config import OpenAIConfig
 
 class APIInfo(BaseModel):
     title: str = "TabletopMagnatServer API"
@@ -24,6 +27,7 @@ class Site(BaseModel):
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", env_nested_delimiter="__")
     # to override info:
     # export app_info='{"title": "x", "version": "0.0.2"}'
     info: APIInfo = APIInfo()
@@ -31,9 +35,7 @@ class Settings(BaseSettings):
     # to override app:
     # export app_app='{"show_error_details": True}'
     app: App = App()
-
-    model_config = SettingsConfigDict(env_prefix='APP_')
-
+    service: Config
 
 def load_settings() -> Settings:
     return Settings()

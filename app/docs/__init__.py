@@ -20,7 +20,7 @@ def configure_docs(app: Application, settings: Settings):
     )
 
     # include only endpoints whose path starts with "/api/"
-    docs.include = lambda path, _: "/api/" in path
+    # docs.include = lambda path, _: "/api/" in path
 
     set_binders_docs(docs)
 
