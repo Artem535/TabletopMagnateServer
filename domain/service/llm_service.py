@@ -1,6 +1,6 @@
 import uuid
 
-from tabletopmagnat.service.llm_service import Service
+from tabletopmagnat.services.llm_service import Service
 from tabletopmagnat.types.dialog.dialog import Dialog
 from tabletopmagnat.types.messages import AiMessage, SystemMessage, UserMessage
 from tabletopmagnat.types.messages.base_message import BaseMessage
