@@ -1,3 +1,6 @@
 [submodule "third-party/tabletopmagnat"]
 	path = third-party/tabletopmagnat
 	url = git@gitlab.raftds.com:rnd/research/pocketflow/tabletopmagnat.git
+[submodule "third-party/TabeltopMagnate"]
+	path = third-party/TabeltopMagnate
+	url = git@github.com:Artem535/TabeltopMagnate.git
